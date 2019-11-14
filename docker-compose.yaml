@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  app:
+    restart: always
+    build:
+      context: .
+    volumes:
+      - ".:/app"
+    command: bash -c 'cd /app && go run *.go'
+    ports:
+      - "8080:8000"
